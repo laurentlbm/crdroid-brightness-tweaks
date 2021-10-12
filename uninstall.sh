@@ -1,3 +1,7 @@
+# remove overlay
+rm -rf /data/resource-cache/* /data/dalvik-cache/* /system/package_cache/*
+sed -i "/item packageName=\"com.android.framework_brightnesstweaks\"/d" /data/system/overlays.xml
+
 # Don't modify anything after this
 if [ -f $INFO ]; then
   while read LINE; do
